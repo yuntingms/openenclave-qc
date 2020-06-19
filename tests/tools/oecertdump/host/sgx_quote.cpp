@@ -381,6 +381,7 @@ oe_result_t generate_sgx_report(oe_enclave_t* enclave, bool verbose)
         log("'\n");
 
         // Print endorsements
+        output_sgx_report(remote_report, report_size);
         {
             uint8_t* endorsements_data = nullptr;
             size_t endorsements_data_size = 0;
