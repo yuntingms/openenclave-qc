@@ -517,9 +517,10 @@ oe_result_t ParseSGXExtensions(
             end,
             &parsed_info->opt_cached_keys);
 
+        // Ignore new sgx cert extenstions
         // Assert that the optional extensions have been read.
-        if (itr != end)
-            OE_RAISE(OE_INVALID_SGX_CERTIFICATE_EXTENSIONS);
+        // if (itr != end)
+        //     OE_RAISE(OE_INVALID_SGX_CERTIFICATE_EXTENSIONS);
     }
 
     result = OE_OK;
