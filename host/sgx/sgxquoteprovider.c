@@ -13,7 +13,7 @@
 #include "sgxquoteprovider.h"
 
 // Define the name of CA
-static uint8_t CRL_CA_PROCESSOR[] = "processor";
+static uint8_t CRL_CA_PLATFORM[] = "platform";
 
 /**
  * This file manages the dcap_quoteprov shared library.
@@ -80,7 +80,7 @@ oe_result_t oe_get_sgx_quote_verification_collateral(
 
     // fetch collateral information
     r = provider.get_sgx_quote_verification_collateral(
-        fmspc, fmspc_size, (char*)CRL_CA_PROCESSOR, &collateral);
+        fmspc, fmspc_size, (char*)CRL_CA_PLATFORM, &collateral);
     if (r != SGX_PLAT_ERROR_OK || collateral == NULL)
     {
         OE_RAISE(OE_QUOTE_PROVIDER_CALL_ERROR);
